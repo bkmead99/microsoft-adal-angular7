@@ -1,0 +1,43 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "microsoft-adal-angular7": {
+      "root": "projects/microsoft-adal-angular7",
+      "sourceRoot": "projects/microsoft-adal-angular7/src",
+      "projectType": "library",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/microsoft-adal-angular7/tsconfig.lib.json",
+            "project": "projects/microsoft-adal-angular7/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/microsoft-adal-angular7/src/test.ts",
+            "tsConfig": "projects/microsoft-adal-angular7/tsconfig.spec.json",
+            "karmaConfig": "projects/microsoft-adal-angular7/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/microsoft-adal-angular7/tsconfig.lib.json",
+              "projects/microsoft-adal-angular7/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "microsoft-adal-angular7"
+}
